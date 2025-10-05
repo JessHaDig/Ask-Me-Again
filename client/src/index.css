@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Ask Me Again custom color palette */
+  --brand-background: 33 56% 97%; /* #fdf8f4 - Soft clay */
+  --brand-text: 0 0% 17%; /* #2c2c2c - Charcoal grey */
+  --brand-accent: 260 26% 40%; /* #5a4b81 - Deep lavender plum */
+  --brand-highlight: 43 34% 73%; /* #d6c7a1 - Earthy gold */
+  
+  /* Standard shadcn variables with our custom colors */
+  --background: var(--brand-background);
+  --foreground: var(--brand-text);
+  --muted: 43 34% 95%;
+  --muted-foreground: 0 0% 45%;
+  --popover: var(--brand-background);
+  --popover-foreground: var(--brand-text);
+  --card: var(--brand-background);
+  --card-foreground: var(--brand-text);
+  --border: 43 30% 90%;
+  --input: 43 30% 90%;
+  --primary: 260 26% 40%; /* Deep lavender plum */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 43 34% 73%; /* Earthy gold */
+  --secondary-foreground: 0 0% 17%;
+  --accent: 43 34% 73%; /* Earthy gold */
+  --accent-foreground: 0 0% 17%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 260 26% 40%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --brand-background: 260 20% 12%; /* Darker version of our plum */
+  --brand-text: 33 56% 97%; /* Inverted to light version of clay */
+  --brand-accent: 260 26% 50%; /* Lighter version of plum */
+  --brand-highlight: 43 34% 63%; /* Darker version of gold */
+  
+  --background: var(--brand-background);
+  --foreground: var(--brand-text);
+  --muted: 260 15% 25%;
+  --muted-foreground: 33 30% 70%;
+  --popover: var(--brand-background);
+  --popover-foreground: var(--brand-text);
+  --card: var(--brand-background);
+  --card-foreground: var(--brand-text);
+  --border: 260 15% 30%;
+  --input: 260 15% 30%;
+  --primary: 260 26% 50%;
+  --primary-foreground: 33 56% 97%;
+  --secondary: 43 34% 63%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 43 34% 63%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 260 15% 50%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, .brand-font {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    @apply text-sm text-muted-foreground;
+  }
+  
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
+}
